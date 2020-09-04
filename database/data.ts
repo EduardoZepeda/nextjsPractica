@@ -1,5 +1,6 @@
 const data: Record<TCountryId, TCountry> = {
   'Thailand': {
+    name: 'Thailand',
     id: 'THA',
     worldMarketPercentage: 0.5,
     proportion: {
@@ -15,6 +16,7 @@ const data: Record<TCountryId, TCountry> = {
     worldProducerPlace: 21,
   },
   'Peru': {
+    name: 'Peru',
     id: 'PER',
     worldMarketPercentage: 3,
     proportion: {
@@ -30,6 +32,7 @@ const data: Record<TCountryId, TCountry> = {
     worldProducerPlace: 9,
   },
   'Mexico': {
+    name: 'Mexico',
     id: 'MEX',
     worldMarketPercentage: 3,
     proportion: {
@@ -45,6 +48,7 @@ const data: Record<TCountryId, TCountry> = {
     worldProducerPlace: 8,
   },
   'Jamaica': {
+    name: 'Jamaica',
     id: 'JAM',
     worldMarketPercentage: 0.01,
     proportion: {
@@ -60,6 +64,7 @@ const data: Record<TCountryId, TCountry> = {
     worldProducerPlace: 44,
   },
   'Java': {
+    name: 'Java',
     id: 'IDN',
     worldMarketPercentage: 7,
     proportion: {
@@ -75,6 +80,7 @@ const data: Record<TCountryId, TCountry> = {
     worldProducerPlace: 3,
   },
   'China': {
+    name: 'China',
     id: 'CHN',
     worldMarketPercentage: 0.5,
     proportion: {
