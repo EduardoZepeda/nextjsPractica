@@ -3,6 +3,7 @@ const data: Record<TCountryId, TCountry> = {
     name: 'Thailand',
     id: 'THA',
     worldMarketPercentage: 0.5,
+    image:"/imgs/thailand-humphrey-muleva.jpg",
     proportion: {
       robusta: 98,
       arabica: 2
@@ -19,6 +20,7 @@ const data: Record<TCountryId, TCountry> = {
     name: 'Peru',
     id: 'PER',
     worldMarketPercentage: 3,
+    image:"/imgs/peru-viajero-cool.jpg",
     proportion: {
       robusta: 0,
       arabica: 100
@@ -35,6 +37,7 @@ const data: Record<TCountryId, TCountry> = {
     name: 'Mexico',
     id: 'MEX',
     worldMarketPercentage: 3,
+    image:"/imgs/mexico-aura-lppez.jpg",
     proportion: {
       robusta: 10,
       arabica: 90
@@ -51,6 +54,7 @@ const data: Record<TCountryId, TCountry> = {
     name: 'Jamaica',
     id: 'JAM',
     worldMarketPercentage: 0.01,
+    image:"/imgs/jamaica-jose-espinal.jpg",
     proportion: {
       robusta: 0,
       arabica: 100
@@ -67,6 +71,7 @@ const data: Record<TCountryId, TCountry> = {
     name: 'Java',
     id: 'IDN',
     worldMarketPercentage: 7,
+    image:"/imgs/java-pixabay.jpg",
     proportion: {
       robusta: 90,
       arabica: 10
@@ -83,6 +88,7 @@ const data: Record<TCountryId, TCountry> = {
     name: 'China',
     id: 'CHN',
     worldMarketPercentage: 0.5,
+    image:"/imgs/china-sam-lim.jpg",
     proportion: {
       robusta: 5,
       arabica: 95
