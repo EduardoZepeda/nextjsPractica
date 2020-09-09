@@ -1,10 +1,20 @@
-import React from 'react'
+import React, {useState, useEffect} from 'react'
 import { useRouter } from 'next/router'
+import CountryDataCard from '@components/CountryDataCard/CountryDataCard'
 
 const Country = () => {
   const { query : { id } } = useRouter()
+  const [country, setCountry] = useState(null)
+
+  useEffect(() => {
+    if(id){
+      window.fetch(`/api/coffee/${id}`).then(response => response.json()).then(data => setCountry(data))
+    }
+  }, [id])
   return(
-    <div>This is the country page id: {id}</div>
+    <div className="main__container flex flex-row justify-center items-center p-8">
+      {country?<CountryDataCard country={country}/>:null}
+    </div>
   )
 }
 

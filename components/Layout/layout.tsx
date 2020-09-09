@@ -1,12 +1,13 @@
 import React from 'react'
 import Navbar from '../Navbar/Navbar'
+import Footer from '../Footer/Footer'
 
 const Layout: React.FC= ({children}) => {
   return (
-    <div>
+    <div className="h-full grid grid-rows-burguer">
           <Navbar/>
           {children}
-          <footer>This is the footer</footer>
+          <Footer/>
     </div>
   )
 }

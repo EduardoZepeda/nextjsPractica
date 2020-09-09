@@ -1,10 +1,11 @@
-import {AppProps} from 'next/app'
+import { AppProps } from 'next/app'
 import Layout from '@components/Layout/layout'
+import '../css/styles.css'
 
-function MyApp({Component, pageProps}: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
   return (<Layout>
-    <Component {...pageProps}/>
-  </Layout>)
+    <Component { ...pageProps } />
+    </Layout>)
 }
 
 // Only uncomment this method if you have blocking data requirements for

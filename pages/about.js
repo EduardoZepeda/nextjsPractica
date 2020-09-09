@@ -3,8 +3,11 @@ import Navbar from '@components/Navbar/Navbar'
 
 const About = () => {
   return(
-    <div>
-      <p>About</p>
+    <div className="about flex flex-row text-gray-700 justify-center">
+      <div className="px-4 sm:w-1/2 md:1/4">
+        <h2 className="text-xl py-4 text-center">About us</h2>
+        <p>We are passionated about coffee.  We travel the world looking for the best coffee for you, with all our love and care, so that every drink from your cup becomes an experience to be remembered.  </p>
+      </div>
     </div>
   )
 }
