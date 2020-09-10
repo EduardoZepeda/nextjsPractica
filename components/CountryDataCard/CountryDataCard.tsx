@@ -1,10 +1,12 @@
 import React, {useEffect} from 'react'
-import Link from 'next/link'
-import Chart from 'chart.js';
 import ProportionChart from '@components/ProportionChart/ProportionChart'
 import WorldMarketPercentageChart from '@components/WorldMarketPercentageChart/WorldMarketPercentageChart'
 
-const CountryDataCard = (props) => {
+type SingleCountryProps = {
+  country: TCountry
+}
+
+const CountryDataCard = ({country}: SingleCountryProps) => {
   const months = [
     "",
     "January",
@@ -35,7 +37,7 @@ const CountryDataCard = (props) => {
     types,
     processes,
     worldProducerPlace
-  } = props.country
+  } = country
 
   return (<div>
     <div className="text-center pb-8">
@@ -67,7 +69,7 @@ const CountryDataCard = (props) => {
       </div>
       <div className="countryTypes">
         <h2 className="text-xl text-center text-gray-800">Types</h2>
-        <p className="text-center text-gray-700">{types.map(type=><p>{type}</p>)}</p>
+        <p className="text-center text-gray-700">{types.map((type:string)=><p>{type}</p>)}</p>
       </div>
       <div className="countryProcesses">
         <h2 className="text-xl text-center text-gray-800">Processes</h2>

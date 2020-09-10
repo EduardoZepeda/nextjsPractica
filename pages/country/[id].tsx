@@ -4,7 +4,7 @@ import CountryDataCard from '@components/CountryDataCard/CountryDataCard'
 
 const Country = () => {
   const { query : { id } } = useRouter()
-  const [country, setCountry] = useState(null)
+  const [country, setCountry] = useState<TCountry | null>(null)
 
   useEffect(() => {
     if(id){

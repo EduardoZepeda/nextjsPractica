@@ -1,12 +1,12 @@
 import React, {useEffect} from 'react'
 import Link from 'next/link'
-import Chart from 'chart.js';
+import {Chart} from 'chart.js';
 
-const ProportionChart = ({arabica, robusta}) => {
+const ProportionChart = ({arabica, robusta}:TProportion) => {
 
   useEffect(() => {
     let ctxProportion = document.getElementById('proportion')
-    var proportionChart = new Chart(ctxProportion, {
+    let proportionChart = new Chart(ctxProportion as HTMLCanvasElement, {
       type: 'pie',
       data: {
         datasets: [
@@ -27,7 +27,7 @@ const ProportionChart = ({arabica, robusta}) => {
           enabled: false
         },
         hover: {
-          mode: null
+          mode: undefined
         }
       }
     })

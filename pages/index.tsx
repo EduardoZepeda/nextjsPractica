@@ -1,12 +1,19 @@
-import React, {useState, useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import Navbar from '@components/Navbar/Navbar'
 import CountryCard from '@components/CountryCard/CountryCard'
 import Link from 'next/link'
 
+type CountryBasicData = {
+  id: string,
+  name: string,
+  image: string
+}
+
+
 const Home = () => {
-  const [countryList, setCountryList] = useState([])
+  const [countryList, setCountryList] = useState<TCountry[]>([])
   useEffect(() => {
-    window.fetch('api/coffee').then(response => response.json()).then(({data, length}) => {
+    window.fetch('api/coffee').then(response => response.json()).then(({data}: TAPICoffeeResponse) => {
       setCountryList(data)
     })
   }, [])
@@ -15,7 +22,7 @@ const Home = () => {
     <div className="main__container flex flex-row flex-wrap justify-center items-center">
 
       {
-        countryList.map(({id, name, image}) => {
+        countryList.map(({id, name, image}: CountryBasicData) => {
           return <CountryCard key={id} name={name} image={image}/>
         })
       }

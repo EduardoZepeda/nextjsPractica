@@ -2,12 +2,18 @@ import React, {useEffect} from 'react'
 import Link from 'next/link'
 import Chart from 'chart.js';
 
-const WorldMarketPercentageChart = ({worldMarketPercentage, name}) => {
+type worldMarketPercentageAndName = {
+  worldMarketPercentage: number,
+  name: string
+}
+
+
+const WorldMarketPercentageChart = ({worldMarketPercentage, name}:worldMarketPercentageAndName) => {
   //World largest producers
   const worldLargestProducers = [{name:"Colombia", percent: 6}, {name:"Brasil", percent: 35}, {name:"Vietnam", percent: 14}, {name:"Indonesia", percent: 7}, {name:"Etiopia", percent: 5}]
   useEffect(() => {
     let ctxMarketPercentage = document.getElementById('worldMarketPercentage')
-    var marketPercentage = new Chart(ctxMarketPercentage, {
+    var marketPercentage = new Chart(ctxMarketPercentage as HTMLCanvasElement, {
       type: 'pie',
       data: {
         datasets: [
@@ -29,7 +35,7 @@ const WorldMarketPercentageChart = ({worldMarketPercentage, name}) => {
           enabled: false
         },
         hover: {
-          mode: null
+          mode: undefined
         }
       }
     })

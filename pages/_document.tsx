@@ -10,7 +10,6 @@ class MyDocument extends Document {
             #__next { height: 100% }
           `}
           </style>
-          {this.props.styleTags}
         <body style={{ height: '100%'}}>
           <Main />
           <NextScript />

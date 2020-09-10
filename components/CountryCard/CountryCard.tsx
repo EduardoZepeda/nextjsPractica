@@ -1,15 +1,22 @@
-import React from 'react'
+import React, { MouseEvent } from 'react'
 import Link from 'next/link'
 
-const handleOnMouseOver = (event)=> {
-  event.target.classList.add("opacity-75")
+type CountryNameAndImage = {
+  name: string,
+  image: string
 }
 
-const handleOnMouseLeave = (event)=> {
-  event.target.classList.remove("opacity-75")
+const handleOnMouseOver = (event: MouseEvent)=> {
+  const element: HTMLElement = event.target as HTMLElement
+  element.classList.add("opacity-75")
 }
 
-const CountryCard = ({name, image}) => {
+const handleOnMouseLeave = (event: MouseEvent)=> {
+  const element: HTMLElement = event.target as HTMLElement
+  element.classList.remove("opacity-75")
+}
+
+const CountryCard = ({name, image}: CountryNameAndImage) => {
   return(
     <>
     <div className="main__country bg-white mx-2 my-2" >

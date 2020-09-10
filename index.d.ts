@@ -30,3 +30,11 @@ type TProportion = {
   robusta: number
   arabica: number
 }
+
+type TAPIDetailCoffeeResponse = TCountry
+
+type TAPICoffeeResponse = {
+  length: number
+  data: TCountry[]
+  error?: string
+}
