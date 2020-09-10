@@ -1,34 +1,84 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import Link from 'next/link'
+import Chart from 'chart.js';
+import ProportionChart from '@components/ProportionChart/ProportionChart'
+import WorldMarketPercentageChart from '@components/WorldMarketPercentageChart/WorldMarketPercentageChart'
 
 const CountryDataCard = (props) => {
-  const {name, id, worldMarketPercentage, proportion:{arabica, robusta}, harvesting:{startMonth, endMonth}, types, processes, worldProducerPlace} = props.country
+  const months = [
+    "",
+    "January",
+    "February",
+    "March",
+    "April",
+    "May",
+    "June",
+    "July",
+    "August",
+    "September",
+    "October",
+    "November",
+    "December"
+  ];
+  const {
+    name,
+    id,
+    worldMarketPercentage,
+    proportion: {
+      arabica,
+      robusta
+    },
+    harvesting: {
+      startMonth,
+      endMonth
+    },
+    types,
+    processes,
+    worldProducerPlace
+  } = props.country
 
-  return(
-    <div className="bg-gray-300">
-      <div className="countryName">
-        <p>Name: {name}</p>
-      </div>
+  return (<div>
+    <div className="text-center pb-8">
+      <h2 className="text-gray-800 text-2xl">{name}</h2>
+    </div>
+    <div className="flex flex-row flex-wrap justify-center gap-12">
       <div className="countryWorldMarketPercentage">
-        <p>world market percentage: {worldMarketPercentage}%</p>
+        <h2 className="text-xl text-center text-gray-800">Proportion</h2>
+        <ProportionChart arabica={arabica} robusta={robusta}/>
+        <p className="text-center text-gray-700">Arabica: {arabica}% Robusta: {robusta}%</p>
       </div>
       <div className="countryProportion">
-        <p>proportion: Arabica: {arabica}% Robusta: {robusta}%</p>
+        <h2 className="text-xl text-center text-gray-800">Percentage</h2>
+        <WorldMarketPercentageChart worldMarketPercentage={worldMarketPercentage} name={name}/>
+        <p className="text-center text-gray-700">{name}: {worldMarketPercentage}%</p>
       </div>
       <div className="countryHarvesting">
-
+        <h2 className="text-xl text-center text-gray-800">Harvesting</h2>
+        <div className="flex flex-row">
+        <div className="mx-2 border-solid border border-t-8 border-red-300 w-20 h-20">
+          <small className="text-gray-500">From</small>
+          <p className="text-xl text-gray-600">{months[startMonth].substring(0, 3)}</p>
+        </div>
+        <div className="mx-2 border-solid border border-t-8 border-red-300 w-20 h-20">
+          <small className="text-gray-500">To</small>
+          <p className="text-xl text-gray-600">{months[endMonth].substring(0, 3)}</p>
+        </div>
+        </div>
       </div>
       <div className="countryTypes">
-
+        <h2 className="text-xl text-center text-gray-800">Types</h2>
+        <p className="text-center text-gray-700">{types.map(type=><p>{type}</p>)}</p>
       </div>
       <div className="countryProcesses">
-
+        <h2 className="text-xl text-center text-gray-800">Processes</h2>
+        <p className="text-center text-gray-700">{processes.join(", ")}</p>
       </div>
       <div className="countryWorldProducerPlace">
-
+        <h2 className="text-xl text-center text-gray-800">Producer place</h2>
+        <p className="text-center text-2xl text-gray-700">{worldProducerPlace}°</p>
       </div>
     </div>
-  )
+  </div>)
 }
 
 export default CountryDataCard

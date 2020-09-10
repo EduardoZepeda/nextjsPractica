@@ -12,7 +12,7 @@ const Country = () => {
     }
   }, [id])
   return(
-    <div className="main__container flex flex-row justify-center items-center p-8">
+    <div className="main__container p-8">
       {country?<CountryDataCard country={country}/>:null}
     </div>
   )

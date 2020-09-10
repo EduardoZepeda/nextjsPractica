@@ -10,7 +10,7 @@ const Footer = () => {
         <object className="mr-2" width="35px" height="35px" type="image/svg+xml" data="/icons/facebook.svg"></object>
         <object className="mr-2" width="35px" height="35px" type="image/svg+xml" data="/icons/twitter.svg"></object>
       </div>
-      <small>Iconos diseñados por <a href="https://www.flaticon.es/autores/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.es/" title="Flaticon">www.flaticon.es</a></small>
+      <small>Icons designed by <a href="https://www.flaticon.com/authors/pixel-perfect" title="Pixel perfect">Pixel perfect</a> from <a href="https://www.flaticon.com/" title="Flaticon">www.flaticon.com</a></small>
     </div>
     <div className="footer__address py-4 text-center">
       <h2>Visit us</h2>
