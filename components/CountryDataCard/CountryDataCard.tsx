@@ -42,7 +42,7 @@ const CountryDataCard = ({country}: CountryDataCardProps) => {
 
   return (<div>
     <div className="text-center pb-8">
-      <h2 className="text-gray-800 text-2xl py-4">{name}</h2>
+      <h2 className="text-gray-800 text-2xl py-4">Coffee from {name}</h2>
       <AddToFavorites country={country}/>
     </div>
     <div className="flex flex-row flex-wrap justify-center gap-12">

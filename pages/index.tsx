@@ -21,12 +21,12 @@ const Home = () => {
       setCountryList(data)
     })
   }, [])
-  return (<div className="main">
+  return (<div className="main flex flex-row flex-wrap justify-center content-start">
     <Head>
       <title>Home</title>
     </Head>
-    <h2 className="text-xl text-center text-gray-700 py-8 font-bold">Know more about the producers</h2>
-    <div className="main__container flex flex-row flex-wrap justify-center items-center">
+    <div className="text-2xl text-center w-full text-gray-700 py-8 font-bold"><h2>Know more about the coffee producers</h2></div>
+    <div className="main__container flex flex-row flex-wrap justify-center items-center md:w-2/3">
 
       {
         countryList.map(({ id, name, image }: CountryCardProps) => {
