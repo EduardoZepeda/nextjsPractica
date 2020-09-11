@@ -93,13 +93,81 @@ const data: Record<TCountryId, TCountry> = {
       robusta: 5,
       arabica: 95
     },
-    types: ["Catimor", "Typica", "Bourbun"],
+    types: ["Catimor", "Typica", "Bourbon"],
     harvesting: {
       startMonth: 5,
       endMonth: 9
     },
     processes: ["natural", "washed"],
     worldProducerPlace: 20,
+  },
+  'Burundi': {
+    name: 'Burundi',
+    id: 'BDI',
+    worldMarketPercentage: 0.5,
+    image:"/imgs/leila-burundi.jpg",
+    proportion: {
+      robusta: 4,
+      arabica: 96
+    },
+    types: ["Mibirizi", "Jackson", "Bourbon"],
+    harvesting: {
+      startMonth: 2,
+      endMonth: 5
+    },
+    processes: ["washed"],
+    worldProducerPlace: 31,
+  },
+  'India': {
+    name: 'India',
+    id: 'IND',
+    worldMarketPercentage: 3.5,
+    image:"/imgs/volker-glatsch-india.jpg",
+    proportion: {
+      robusta: 60,
+      arabica: 40
+    },
+    types: ["Catimor", "Kent", "Bourbon", "S 795", "Selections 4", "5B", "9", "10", "San Ramon", "Caturra", "Devamachy"],
+    harvesting: {
+      startMonth: 1,
+      endMonth: 3
+    },
+    processes: ["washed"],
+    worldProducerPlace: 31,
+  },
+  'Brazil': {
+    name: 'Brazil',
+    id: 'BRA',
+    worldMarketPercentage: 35,
+    image:"/imgs/pexels-brazil.jpg",
+    proportion: {
+      robusta: 20,
+      arabica: 80
+    },
+    types: ["Catuai", "Acaia", "Bourbon", "Mundo Novo", "Icatu"],
+    harvesting: {
+      startMonth: 5,
+      endMonth: 9
+    },
+    processes: ["natural", "washed", "semiwashed", "pulped"],
+    worldProducerPlace: 1,
+  },
+  'Honduras': {
+    name: 'Honduras',
+    id: 'HND',
+    worldMarketPercentage: 3,
+    image:"/imgs/honduras-maria-michelle.jpg",
+    proportion: {
+      robusta: 0,
+      arabica: 100
+    },
+    types: ["Catuai", "Caturra", "Pacas", "Typica"],
+    harvesting: {
+      startMonth: 11,
+      endMonth: 4
+    },
+    processes: ["washed"],
+    worldProducerPlace: 7,
   },
 }
 
