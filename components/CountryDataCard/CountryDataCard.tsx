@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react'
 import ProportionChart from '@components/ProportionChart/ProportionChart'
 import WorldMarketPercentageChart from '@components/WorldMarketPercentageChart/WorldMarketPercentageChart'
+import AddToFavorites from '@components/AddToFavorites/AddToFavorites'
 
 type CountryDataCardProps = {
   country: TCountry
@@ -41,7 +42,8 @@ const CountryDataCard = ({country}: CountryDataCardProps) => {
 
   return (<div>
     <div className="text-center pb-8">
-      <h2 className="text-gray-800 text-2xl">{name}</h2>
+      <h2 className="text-gray-800 text-2xl py-4">{name}</h2>
+      <AddToFavorites country={country}/>
     </div>
     <div className="flex flex-row flex-wrap justify-center gap-12">
       <div className="countryWorldMarketPercentage">
@@ -69,7 +71,7 @@ const CountryDataCard = ({country}: CountryDataCardProps) => {
       </div>
       <div className="countryTypes">
         <h2 className="text-xl text-center text-gray-800">Types</h2>
-        <p className="text-center text-gray-700">{types.map((type:string)=><p>{type}</p>)}</p>
+        <div className="text-center text-gray-700">{types.map((type:string, index:number)=><p key={index}>{type}</p>)}</div>
       </div>
       <div className="countryProcesses">
         <h2 className="text-xl text-center text-gray-800">Processes</h2>

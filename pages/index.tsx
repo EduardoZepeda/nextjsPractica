@@ -3,6 +3,7 @@ import Navbar from '@components/Navbar/Navbar'
 import CountryCard from '@components/CountryCard/CountryCard'
 import Link from 'next/link'
 import Head from 'next/head'
+import { useFavorites } from '@store/Favorites'
 
 type CountryCardProps = {
   id: string,
@@ -13,6 +14,10 @@ type CountryCardProps = {
 
 const Home = () => {
   const [countryList, setCountryList] = useState<TCountry[]>([])
+  const {count: favoritesCount, favorites: favoriteCountries, favoritesById: favoritesCountriesById } = useFavorites()
+  console.log(favoritesCount)
+  console.log(favoritesCountriesById)
+
   useEffect(() => {
     window.fetch('api/coffee').then(response => response.json()).then(({ data }: TAPICoffeeResponse) => {
       setCountryList(data)

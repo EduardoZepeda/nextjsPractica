@@ -1,11 +1,14 @@
 import { AppProps } from 'next/app'
 import Layout from '@components/Layout/layout'
 import '../css/styles.css'
+import FavoritesProvider from '@store/Favorites'
 
 function MyApp({ Component, pageProps }: AppProps) {
-  return (<Layout>
+  return (<FavoritesProvider>
+    <Layout>
     <Component { ...pageProps } />
-    </Layout>)
+    </Layout>
+      </FavoritesProvider>)
 }
 
 // Only uncomment this method if you have blocking data requirements for
