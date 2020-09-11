@@ -2,11 +2,11 @@ import React, {useEffect} from 'react'
 import ProportionChart from '@components/ProportionChart/ProportionChart'
 import WorldMarketPercentageChart from '@components/WorldMarketPercentageChart/WorldMarketPercentageChart'
 
-type SingleCountryProps = {
+type CountryDataCardProps = {
   country: TCountry
 }
 
-const CountryDataCard = ({country}: SingleCountryProps) => {
+const CountryDataCard = ({country}: CountryDataCardProps) => {
   const months = [
     "",
     "January",

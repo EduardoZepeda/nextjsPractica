@@ -1,7 +1,7 @@
 import React, { MouseEvent } from 'react'
 import Link from 'next/link'
 
-type CountryNameAndImage = {
+type CountryCardProps = {
   name: string,
   image: string
 }
@@ -16,7 +16,7 @@ const handleOnMouseLeave = (event: MouseEvent)=> {
   element.classList.remove("opacity-75")
 }
 
-const CountryCard = ({name, image}: CountryNameAndImage) => {
+const CountryCard = ({name, image}: CountryCardProps) => {
   return(
     <>
     <div className="main__country bg-white mx-2 my-2" >

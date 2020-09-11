@@ -2,13 +2,13 @@ import React, {useEffect} from 'react'
 import Link from 'next/link'
 import Chart from 'chart.js';
 
-type worldMarketPercentageAndName = {
+type worldMarketProps = {
   worldMarketPercentage: number,
   name: string
 }
 
 
-const WorldMarketPercentageChart = ({worldMarketPercentage, name}:worldMarketPercentageAndName) => {
+const WorldMarketPercentageChart = ({worldMarketPercentage, name}:worldMarketProps) => {
   //World largest producers
   const worldLargestProducers = [{name:"Colombia", percent: 6}, {name:"Brasil", percent: 35}, {name:"Vietnam", percent: 14}, {name:"Indonesia", percent: 7}, {name:"Etiopia", percent: 5}]
   useEffect(() => {
