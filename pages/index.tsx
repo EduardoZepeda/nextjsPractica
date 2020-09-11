@@ -25,7 +25,7 @@ const Home = () => {
     <Head>
       <title>Home</title>
     </Head>
-    <div className="text-2xl text-center w-full text-gray-700 py-8 font-bold"><h2>Know more about the coffee producers</h2></div>
+    <div className="text-2xl text-center w-full text-gray-700 py-8 font-bold"><h2>Know more about our coffee providers</h2></div>
     <div className="main__container flex flex-row flex-wrap justify-center items-center md:w-2/3">
 
       {

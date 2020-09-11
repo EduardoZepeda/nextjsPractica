@@ -45,7 +45,7 @@ const CountryDataCard = ({country}: CountryDataCardProps) => {
       <h2 className="text-gray-800 text-2xl py-4">Coffee from {name}</h2>
       <AddToFavorites country={country}/>
     </div>
-    <div className="flex flex-row flex-wrap justify-center gap-12">
+    <div className="flex flex-row flex-wrap justify-center pt-4 gap-12">
       <div className="countryWorldMarketPercentage">
         <h2 className="text-xl text-center text-gray-800">Proportion</h2>
         <ProportionChart arabica={arabica} robusta={robusta}/>

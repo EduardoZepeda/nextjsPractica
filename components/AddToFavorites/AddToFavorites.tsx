@@ -67,8 +67,10 @@ const AddToFavorites = ({ country }: AddToFavoritesProps) => {
   }
 
   return (<div>
-    <button onClick= { countryInFavorites? handleRemove: handleSubmit } className = { "countryCard__favoriteButton inline-flex bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 border-b-4 border-blue-700 hover:border-blue-500 rounded " + (loading ? "cursor-not-allowed" : "") } >
+    <button onClick= { countryInFavorites? handleRemove: handleSubmit } className = { "countryCard__favoriteButton inline-flex bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 my-4 border-b-4 border-blue-700 hover:border-blue-500 rounded " + (loading ? "cursor-not-allowed" : "") } >
       <object width="25px" height = "25px" type = "image/svg+xml" data = "/icons/estrella.svg" > </object><span>{countryInFavorites? "Remove from": "Add to"} favorites</span > </button>
+      <p className={"text-green-600 font-bold text-white absolute left-0 right-0 " + (visible?"":"hidden")}>{countryInFavorites? "✓ Removed from": "✓ Added to"} favorites!</p>
+      <p className={"text-red-400 absolute left-0 right-0 " + (error?"":"hidden")}>{error}</p>
         </div>)
 }
 
