@@ -15,8 +15,6 @@ type CountryCardProps = {
 const Home = () => {
   const [countryList, setCountryList] = useState<TCountry[]>([])
   const {count: favoritesCount, favorites: favoriteCountries, favoritesById: favoritesCountriesById } = useFavorites()
-  console.log(favoritesCount)
-  console.log(favoritesCountriesById)
 
   useEffect(() => {
     window.fetch('api/coffee').then(response => response.json()).then(({ data }: TAPICoffeeResponse) => {
