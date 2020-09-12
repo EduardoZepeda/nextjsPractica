@@ -23,7 +23,7 @@ const CountryCard = ({name, image} : CountryCardProps) => {
         <div className="h-48 w-48 shadow-lg rounded-full flex flex-row justify-center items-center bg-cover bg-center transition duration-700 ease-in-out" style={{
             backgroundImage: `url(${image})`
           }} onMouseOver={handleOnMouseOver} onMouseLeave={handleOnMouseLeave}>
-          <p className="uppercase text-white text-xl text-center">{name}</p>
+          <p className="uppercase text-white text-xl text-center font-bold text-shadow-md">{name}</p>
         </div>
       </a>
     </Link>

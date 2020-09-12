@@ -4,9 +4,9 @@ import Link from 'next/link'
 const Navbar = () => {
   return(
     <nav className="navbar flex flex-row justify-around items-center text-lg text-yellow-100 bg-green-400">
-      <menu className="navbar__menu">
-        <Link href="/"><a>Home </a></Link>
-        <Link href="/about"><a>About</a></Link>
+      <menu className="navbar__menu inline-flex">
+        <div className="mx-2"><Link href="/"><a>Home </a></Link></div>
+        <div className="mx-2"><Link href="/about"><a>About</a></Link></div>
       </menu>
       <div className="navbar__cart">
         <Link href="/country/favorites"><a>
