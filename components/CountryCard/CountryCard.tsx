@@ -16,6 +16,10 @@ const handleOnMouseLeave = (event : MouseEvent) => {
   element.classList.remove("opacity-75")
 }
 
+const handleOnMouseOverChildren = (event : MouseEvent) => {
+  event.stopPropagation()
+}
+
 const CountryCard = ({name, image} : CountryCardProps) => {
   return (<div className="main__country bg-white mx-2 my-2">
     <Link href={"/country/" + name}>
@@ -23,7 +27,7 @@ const CountryCard = ({name, image} : CountryCardProps) => {
         <div className="h-48 w-48 shadow-lg rounded-full flex flex-row justify-center items-center bg-cover bg-center transition duration-700 ease-in-out" style={{
             backgroundImage: `url(${image})`
           }} onMouseOver={handleOnMouseOver} onMouseLeave={handleOnMouseLeave}>
-          <p className="uppercase text-white text-xl text-center font-bold text-shadow-md">{name}</p>
+          <p onMouseOver={handleOnMouseOverChildren} className="uppercase text-white text-xl text-center font-bold text-shadow-md">{name}</p>
         </div>
       </a>
     </Link>
