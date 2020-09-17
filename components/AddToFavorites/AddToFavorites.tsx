@@ -1,15 +1,14 @@
-import React, { useState, useContext, useEffect } from 'react'
+import React, { useState } from 'react'
 import { useFavoriteMutations, useFavorites } from '@store/Favorites'
 
 type AddToFavoritesProps = {
   country: TCountry
 }
 
-let req;
 
 const addOrRemoveFromFavoritesRequest = () =>
-  new Promise((resolve, reject) => {
-    req = window.setTimeout(resolve, 400)
+  new Promise((resolve) => {
+    window.setTimeout(resolve, 400)
   })
 
 const AddToFavorites = ({ country }: AddToFavoritesProps) => {

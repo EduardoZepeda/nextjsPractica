@@ -14,7 +14,7 @@ export type FavoritesActions = {
 const defaultState = {} as FavoritesState
 
 const FavoritesContext = React.createContext(defaultState)
-const FavoritesDispatchContext = React.createContext((() => {}) as Dispatch<FavoritesActions>)
+const FavoritesDispatchContext = React.createContext((() => { }) as Dispatch<FavoritesActions>)
 
 const FavoritesProvider = ({ children }: { children: React.ReactNode }) => {
   const [state, dispatch] = useReducer(favoritesReducer, defaultState)
