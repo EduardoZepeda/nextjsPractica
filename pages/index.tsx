@@ -16,16 +16,16 @@ const Home = () => {
   const [error, setError] = useState("")
 
   useEffect(() => {
+    setLoading(true)
     window.fetch('api/coffee').then(response => {
-      setLoading(true)
-      return response.json()})
+        return response.json()})
       .then(({ data }: TAPICoffeeResponse) => {
-      setLoading(false)
-      setError("")
-      setCountryList(data)
-    }).catch(error=>{
-      setError(error);
-      setLoading(false)})
+        setLoading(false)
+        setError("")
+        setCountryList(data)})
+      .catch(error=>{
+        setError(error);
+        setLoading(false)})
   }, [])
   return (<div className="main flex flex-row flex-wrap justify-center content-start">
     <Head>
