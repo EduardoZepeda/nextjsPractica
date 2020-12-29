@@ -1,7 +1,11 @@
 import React from 'react'
 import Link from 'next/link'
+import { useFavorites } from '@store/Favorites'
+
 
 const Navbar = () => {
+   const { count: favoritesCount } = useFavorites()
+
   return(
     <nav className="navbar flex flex-row justify-around items-center text-lg text-yellow-100 bg-green-400">
       <menu className="navbar__menu inline-flex">
@@ -10,7 +14,8 @@ const Navbar = () => {
       </menu>
       <div className="navbar__cart">
         <Link href="/country/favorites"><a>
-          <div className="inline-flex"><object className="mr-2" width="25px" height="25px" type="image/svg+xml" data="/icons/estrella.svg"></object><span>Favorites</span></div>
+          <div className="inline-flex">
+            <img className="mr-2" width="25px" height="25px" src="/icons/estrella.svg"/><span>Favorites{favoritesCount>0?`(${favoritesCount})`:null}</span></div>
           </a></Link>
       </div>
     </nav>
