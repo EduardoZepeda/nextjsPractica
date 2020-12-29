@@ -16,7 +16,10 @@ const Favorites = () => {
 
   return (<div className="main">
     <Head>
-      <title>My favorite countries</title>
+        <title>My favorite coffee providers</title>
+        <meta property="og:title" content="Favorite coffee providers" key="Favorites" />
+        <meta property="og:description" content="Favorite coffee providers from around the world" key="Favorites" />
+        <meta name="description" content="Favorite coffee providers from around the world" />
     </Head>
     <h2 className="text-2xl text-center text-gray-700 py-8 font-bold">My favorites</h2>
     <div className="main__container flex flex-row flex-wrap justify-center items-center mb-16">

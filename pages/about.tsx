@@ -7,6 +7,9 @@ const About = () => {
     <div className="about flex mb-16 flex-row text-gray-700 justify-center">
       <Head>
         <title>About us</title>
+        <meta property="og:title" content="About us" key="About us" />
+        <meta property="og:description" content="A small description about how we are and why we do what we do" key="About us" />
+        <meta name="description" content="A small description about how we are and why we do what we do" />
       </Head>
       <div className="px-4 sm:w-1/2 md:1/4">
         <h2 className="text-2xl py-4 text-center">About us</h2>

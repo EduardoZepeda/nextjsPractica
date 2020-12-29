@@ -32,7 +32,10 @@ const Country = () => {
   return(
     <div className="main__container p-8">
       <Head>
-        <title>Info</title>
+        <title>{`Coffee from ${id}`}</title>
+        <meta property="og:title" content={`Coffee from ${id}`} key={id} />
+        <meta property="og:description" content={`Info and graphics about coffee production from ${id}`} key={id} />
+        <meta name="description" content={`Info and graphics about coffee production from ${id}`} />
       </Head>
       {error?<div className="text-red-400 font-bold">{error}</div>:null}
       {country?<CountryDataCard country={country}/>:null}

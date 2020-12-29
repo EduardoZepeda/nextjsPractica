@@ -29,7 +29,10 @@ const Home = () => {
   }, [])
   return (<div className="main flex flex-row flex-wrap justify-center content-start">
     <Head>
-      <title>Home</title>
+        <title>{`Coffee around the world`}</title>
+        <meta property="og:title" content="Coffee around the world" key="Home" />
+        <meta property="og:description" content="We provide you good coffee from around the world" key="Home" />
+        <meta name="description" content="We provide you good coffee from around the world" />
     </Head>
 
     <div className="text-2xl text-center w-full text-gray-700 py-8 font-bold"><h2>Know more about our coffee providers</h2></div>
