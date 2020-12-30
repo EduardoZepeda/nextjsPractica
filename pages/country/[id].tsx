@@ -4,6 +4,7 @@ import Head from 'next/head'
 
 import CountryDataCard from '@components/CountryDataCard/CountryDataCard'
 import Loading from '@components/Loading/Loading'
+import CountryHorizontalBar from '@components/CountryHorizontalBar/CountryHorizontalBar'
 
 const Country = () => {
   const { query : { id } } = useRouter()
@@ -39,6 +40,7 @@ const Country = () => {
       </Head>
       {error?<div className="text-red-400 font-bold">{error}</div>:null}
       {country?<CountryDataCard country={country}/>:null}
+      <CountryHorizontalBar/>
     </div>
   )
 }
