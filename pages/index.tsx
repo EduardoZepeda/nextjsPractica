@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react'
+import fetch from 'isomorphic-unfetch'
 import CountryCard from '@components/CountryCard/CountryCard'
 import Head from 'next/head'
 import Loading from '@components/Loading/Loading'
@@ -9,24 +10,18 @@ type CountryCardProps = {
   image: string
 }
 
+export const getServerSideProps = async () => {
+    const response = await fetch('https://nextjs-practice-mauve.vercel.app/api/coffee')
+    const {data: countryList}: TAPICoffeeResponse = await response.json()
+  return {
+        props: {
+            countryList,
+        }
+    }
+}
 
-const Home = () => {
-  const [countryList, setCountryList] = useState<TCountry[]>([])
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState("")
+const Home = ({countryList}: {countryList: TCountry[]}) => {
 
-  useEffect(() => {
-    setLoading(true)
-    window.fetch('api/coffee').then(response => {
-        return response.json()})
-      .then(({ data }: TAPICoffeeResponse) => {
-        setLoading(false)
-        setError("")
-        setCountryList(data)})
-      .catch(error=>{
-        setError(error);
-        setLoading(false)})
-  }, [])
   return (<div className="main flex flex-row flex-wrap justify-center content-start">
     <Head>
         <title>{`Coffee around the world`}</title>
@@ -39,12 +34,11 @@ const Home = () => {
     <div className="main__container flex flex-row flex-wrap justify-center items-center md:w-2/3">
 
 
-      {loading?<Loading/>:
+      {
         countryList.map(({ id, name, image }: CountryCardProps) => {
           return <CountryCard key={id} name={name} image={image} />
         })
       }
-      {error?<div className="text-red-400 font-bold">{error}</div>:null}
     </div>
   </div>)
 }
