@@ -11,7 +11,7 @@ const credentials: NextApiHandler<User> = (request: NextApiRequest, response: Ne
 
     if (request.body.password === 'admin' && request.body.username === 'admin') {
         // This is a placeholder for authentication, please don't use this, ever
-        const TestUser : User = {
+        const TestUser: User = {
             id: '1',
             email: 'admin@example.org',
             name: 'John Doe',

@@ -4,7 +4,7 @@
 import allData from './data'
 
 class Database {
-  constructor() {}
+  constructor() { }
 
   async getAll(): Promise<TCountry[]> {
     const asArray = Object.values(allData)

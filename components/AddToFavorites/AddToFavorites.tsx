@@ -41,7 +41,6 @@ const AddToFavorites = ({ country }: AddToFavoritesProps) => {
           toggleMessage()
         })
         .catch((err: Error) => {
-          console.log("error")
           setError(`Error: ${err}` || 'There was an error hang in there')
           setLoading(false)
         })
@@ -66,11 +65,11 @@ const AddToFavorites = ({ country }: AddToFavoritesProps) => {
   }
 
   return (<div>
-    <button onClick= { countryInFavorites? handleRemove: handleSubmit } className = { "countryCard__favoriteButton inline-flex bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 my-4 border-b-4 border-blue-700 hover:border-blue-500 rounded " + (loading ? "cursor-not-allowed" : "") } >
-      <img width="25px" height ="25px" src="/icons/estrella.svg"/> <span>{countryInFavorites? "Remove from": "Add to"} favorites</span > </button>
-      <p className={"text-green-600 font-bold text-white absolute left-0 right-0 " + (visible?"":"hidden")}>{countryInFavorites? "✓ Added to": "✓ Removed from"} favorites!</p>
-      <p className={"text-red-400 absolute left-0 right-0 " + (error?"":"hidden")}>{error}</p>
-        </div>)
+    <button onClick={countryInFavorites ? handleRemove : handleSubmit} className={"countryCard__favoriteButton inline-flex bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 my-4 border-b-4 border-blue-700 hover:border-blue-500 rounded " + (loading ? "cursor-not-allowed" : "")} >
+      <img width="25px" height="25px" src="/icons/estrella.svg" /> <span>{countryInFavorites ? "Remove from" : "Add to"} favorites</span > </button>
+    <p className={"text-green-600 font-bold text-white absolute left-0 right-0 " + (visible ? "" : "hidden")}>{countryInFavorites ? "✓ Added to" : "✓ Removed from"} favorites!</p>
+    <p className={"text-red-400 absolute left-0 right-0 " + (error ? "" : "hidden")}>{error}</p>
+  </div>)
 }
 
 export default AddToFavorites
