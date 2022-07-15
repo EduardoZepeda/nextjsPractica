@@ -1,8 +1,7 @@
-import React, { useState, useEffect } from 'react'
+import React from 'react'
 import fetch from 'isomorphic-unfetch'
 import CountryCard from '@components/CountryCard/CountryCard'
 import Head from 'next/head'
-import Loading from '@components/Loading/Loading'
 
 type CountryCardProps = {
   id: string,
@@ -13,16 +12,16 @@ type CountryCardProps = {
 export const getServerSideProps = async () => {
     const response = await fetch('https://nextjs-practice-mauve.vercel.app/api/coffee')
     const {data: countryList}: TAPICoffeeResponse = await response.json()
-  return {
-        props: {
-            countryList,
-        }
-    }
+    return {
+          props: {
+              countryList,
+          }
+      }
 }
 
 const Home = ({countryList}: {countryList: TCountry[]}) => {
 
-  return (<div className="main flex flex-row flex-wrap justify-center content-start">
+  return (<div className="main p-8 flex flex-row flex-wrap justify-center content-start">
     <Head>
         <title>{`Coffee around the world`}</title>
         <meta property="og:title" content="Coffee around the world" key="Home" />
