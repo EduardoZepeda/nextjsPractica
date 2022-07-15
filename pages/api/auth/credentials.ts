@@ -32,7 +32,6 @@ const credentials: NextApiHandler<User> = (request: NextApiRequest, response: Ne
             response.status(401).end()
         }
     })
-    response.status(401).end()
 }
 
 export default credentials
