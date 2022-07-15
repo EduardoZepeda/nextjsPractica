@@ -26,7 +26,6 @@ const options: NextAuthOptions = {
                     body: JSON.stringify(credentials),
                     headers: { "Content-type": "application/json" }
                 })
-
                 const user = await res.json()
 
                 if (res.ok && user) {
