@@ -7,7 +7,7 @@ type worldMarketProps = {
 }
 
 
-const WorldMarketPercentageChart = ({ worldMarketPercentage, name }: worldMarketProps) => {
+const WorldMarketPercentageChart = ({ worldMarketPercentage, name }: worldMarketProps): React.ReactElement => {
   //World largest producers
   const worldLargestProducers = [{ name: "Colombia", worldMarketPercentage: 6 }, { name: "Brazil", worldMarketPercentage: 35 }, { name: "Vietnam", worldMarketPercentage: 14 }, { name: "Indonesia", worldMarketPercentage: 7 }, { name: "Etiopia", worldMarketPercentage: 5 }].filter((country: worldMarketProps) => country.name.toLowerCase() != name.toLowerCase())
   useEffect(() => {
@@ -39,9 +39,10 @@ const WorldMarketPercentageChart = ({ worldMarketPercentage, name }: worldMarket
     })
   })
 
-  return (<div>
-    <canvas id="worldMarketPercentage" width="250" height="250"></canvas>
-  </div>)
+  return (
+    <div>
+      <canvas id="worldMarketPercentage" width="250" height="250"></canvas>
+    </div>)
 }
 
 export default WorldMarketPercentageChart

@@ -2,7 +2,7 @@ import React from 'react'
 import { signOut, useSession } from "next-auth/react"
 import Link from 'next/link'
 
-const SigninSignout = () => {
+const SigninSignout = (): React.ReactElement => {
 
   return (
     <Link href="/">

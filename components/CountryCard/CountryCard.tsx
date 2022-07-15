@@ -20,7 +20,7 @@ const handleOnMouseOverChildren = (event: MouseEvent) => {
   event.stopPropagation()
 }
 
-const CountryCard = ({ name, image }: CountryCardProps) => {
+const CountryCard = ({ name, image }: CountryCardProps): React.ReactElement => {
   return (<div className="main__country bg-white mx-2 my-2">
     <Link href={"/country/" + name}>
       <a>

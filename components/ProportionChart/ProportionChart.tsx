@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { Chart } from 'chart.js';
 
-const ProportionChart = ({ arabica, robusta }: TProportion) => {
+const ProportionChart = ({ arabica, robusta }: TProportion): React.ReactElement => {
 
   useEffect(() => {
     let ctxProportion = document.getElementById('proportion')
@@ -32,9 +32,10 @@ const ProportionChart = ({ arabica, robusta }: TProportion) => {
     })
   })
 
-  return (<div>
-    <canvas id="proportion" width="250" height="250"></canvas>
-  </div>)
+  return (
+    <div>
+      <canvas id="proportion" width="250" height="250"></canvas>
+    </div>)
 }
 
 export default ProportionChart

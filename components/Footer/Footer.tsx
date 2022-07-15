@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Footer = () => {
+const Footer = (): React.ReactElement => {
   return (<footer className="footer text-white py-8 bg-gray-800 flex flex-row justify-around flex-wrap">
     <div className="footer__socialMedia text-center">
       <h2>Follow us on social media</h2>

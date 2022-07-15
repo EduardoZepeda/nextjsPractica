@@ -6,23 +6,18 @@ type AddToFavoritesProps = {
 }
 
 
-const addOrRemoveFromFavoritesRequest = () =>
+const addOrRemoveFromFavoritesRequest = (): Promise<void> =>
   new Promise((resolve) => {
     window.setTimeout(resolve, 400)
   })
 
-const AddToFavorites = ({ country }: AddToFavoritesProps) => {
-  const [loading, setLoading] = useState(false)
-  const [error, setError] = useState('')
-  const [visible, setVisible] = useState(false)
+const AddToFavorites = ({ country }: AddToFavoritesProps): React.ReactElement => {
+  const [loading, setLoading] = useState<Boolean>(false)
+  const [error, setError] = useState<String>('')
+  const [visible, setVisible] = useState<Boolean>(false)
   const { addToFavorites, removeFromFavorites } = useFavoriteMutations()
   const { favoritesById: favoritesCountriesById } = useFavorites()
   const countryInFavorites = favoritesCountriesById[country.id] != undefined
-  // useEffect(() => {
-  //     return function cleanup() {
-  //       clearTimeout(req)
-  //     }
-  // })
 
   const toggleMessage = () => {
     setTimeout(() => {
@@ -47,7 +42,7 @@ const AddToFavorites = ({ country }: AddToFavoritesProps) => {
     }
   }
 
-  const handleRemove = async () => {
+  const handleRemove = async (): Promise<void> => {
     if (!error) {
       setLoading(true)
       addOrRemoveFromFavoritesRequest()
@@ -64,12 +59,13 @@ const AddToFavorites = ({ country }: AddToFavoritesProps) => {
     }
   }
 
-  return (<div>
-    <button onClick={countryInFavorites ? handleRemove : handleSubmit} className={"countryCard__favoriteButton inline-flex bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 my-4 border-b-4 border-blue-700 hover:border-blue-500 rounded " + (loading ? "cursor-not-allowed" : "")} >
-      <img width="25px" height="25px" src="/icons/estrella.svg" /> <span>{countryInFavorites ? "Remove from" : "Add to"} favorites</span > </button>
-    <p className={"text-green-600 font-bold text-white absolute left-0 right-0 " + (visible ? "" : "hidden")}>{countryInFavorites ? "✓ Added to" : "✓ Removed from"} favorites!</p>
-    <p className={"text-red-400 absolute left-0 right-0 " + (error ? "" : "hidden")}>{error}</p>
-  </div>)
+  return (
+    <div>
+      <button onClick={countryInFavorites ? handleRemove : handleSubmit} className={"countryCard__favoriteButton inline-flex bg-blue-500 hover:bg-blue-400 text-white font-bold py-2 px-4 my-4 border-b-4 border-blue-700 hover:border-blue-500 rounded " + (loading ? "cursor-not-allowed" : "")} >
+        <img width="25px" height="25px" src="/icons/estrella.svg" /> <span>{countryInFavorites ? "Remove from" : "Add to"} favorites</span > </button>
+      <p className={"text-green-600 font-bold text-white absolute left-0 right-0 " + (visible ? "" : "hidden")}>{countryInFavorites ? "✓ Added to" : "✓ Removed from"} favorites!</p>
+      <p className={"text-red-400 absolute left-0 right-0 " + (error ? "" : "hidden")}>{error}</p>
+    </div>)
 }
 
 export default AddToFavorites

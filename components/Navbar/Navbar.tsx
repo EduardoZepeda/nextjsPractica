@@ -4,7 +4,7 @@ import { useFavorites } from '@store/Favorites'
 import SigninSignout from '../SigninSignout/SigninSignout'
 
 
-const Navbar = () => {
+const Navbar = (): React.ReactElement => {
   const { count: favoritesCount } = useFavorites()
 
   return (
