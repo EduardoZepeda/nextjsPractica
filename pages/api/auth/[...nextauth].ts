@@ -17,6 +17,7 @@ const options: NextAuthOptions = {
             name: 'credentials',
 
             credentials: {
+                // Credentials are hardcoded in the form, please don't do this in a real project
                 username: { label: "Username", type: "text", placeholder: "admin", value: "admin" },
                 password: { label: "Password", type: "password", placeholder: "admin", value: "admin" }
             },
